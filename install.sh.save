@@ -1,13 +1,11 @@
 #/bin/bash
 
 echo "Installing Arch in:"
-for n in 5 4 3 2 1
+for n in 10 9 8 7 6 5 4 3 2 1
 do
 	echo "--------- $n"
 	sleep 1s
 done
-
-echo "--------- 0 \n \n"
 
 ip link set wlan0 up
 timedatectl set-ntp true
