@@ -53,4 +53,6 @@ sleep 2s
 genfstab -U /mnt >> /mnt/etc/fstab
 
 echo "Chrooting"
-arch-chroot /mnt (sh /run/instalarch/after.sh)
+cp /run/instalarch/after.sh /mnt/home
+arch-chroot /mnt /home/after.sh
+
