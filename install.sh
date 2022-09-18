@@ -13,9 +13,12 @@ timedatectl set-ntp true
 echo "Partitioning disks"
 sleep 2s
 parted /dev/sda mklabel gpt
+echo "criating esp partition"
 parted /dev/sda mkpart "EFI system partition" fat32 1MiB 401MiB
 parted /dev/sda set 1 esp on
+echo "creating swap"
 parted /dev/sda mkpart "swap partition" linux-swap 402MiB 5GiB
+echo "creating root"
 parted /dev/sda mkpart "root partition" btrfs 5001MiB 100%
 
 echo "Formating partitions"
