@@ -52,6 +52,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 echo "Chrooting"
 arch-chroot /mnt
+systemctl enable --now NetworkManager
 
 echo "Setting timezone"
 ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
